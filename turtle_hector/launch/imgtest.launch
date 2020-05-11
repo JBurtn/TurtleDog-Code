@@ -1,0 +1,9 @@
+<launch>
+	<!--/camera/rgb/image_raw topic-->
+    <node pkg="ros_deep_learning" type="detectnet" name="detectnet">
+        <param name="model_name" value="coco-chair"/>
+        <param name="mean_pixel_value" value="0.0"/>
+        <param name="threshold" value="0.5"/>
+        <remap to="/detectnet/image_in" from="camera/rgb/image_color"/>
+    </node>
+</launch>
